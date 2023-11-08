@@ -3,15 +3,14 @@ package com.example.board.persist;
 import com.example.board.type.ProviderType;
 import com.example.board.type.Role;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import net.minidev.json.annotate.JsonIgnore;
 
 import java.time.LocalDateTime;
 
 @Table(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Getter
 @Entity
 public class User {
@@ -24,6 +23,7 @@ public class User {
     @Column(unique = true, length = 40)
     private String email;
 
+    @JsonIgnore
     @Column(length = 72)
     private String password;
 
