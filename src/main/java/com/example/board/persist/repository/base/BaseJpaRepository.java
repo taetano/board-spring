@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface BaseJpaRepository<T, ID> extends Repository<T, ID>, QueryByExampleExecutor<T> {
     Optional<T> findById(ID id);
 
-    boolean existById(ID id);
+    boolean existsById(ID id);
 
     T getReferenceById(ID id);
 
